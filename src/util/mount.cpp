@@ -57,6 +57,8 @@ TError TMount::Find(TPath path, const TPath mounts) {
     TError error(EError::Unknown, "mountpoint not found: " + path.ToString() + ")");
 
     while ((m = getmntent_r(f, &mntbuf, buf.data(), buf.size()))) {
+        if (strcmp(m->mnt_type, "rootfs") == 0)
+            continue;
 
         TPath source(m->mnt_fsname);
         TPath target(m->mnt_dir);
