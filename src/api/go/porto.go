@@ -13,7 +13,7 @@ import (
 
 	"github.com/golang/protobuf/proto"
 
-	"./rpc"
+	"github.com/monsterzz/porto/src/api/go/rpc"
 )
 
 const portoSocket = "/run/portod.socket"

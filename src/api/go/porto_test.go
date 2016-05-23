@@ -8,7 +8,7 @@ import (
 	"syscall"
 	"testing"
 
-	"./rpc"
+	"github.com/monsterzz/porto/src/api/go/rpc"
 )
 
 func FailOnError(t *testing.T, conn API, err error) {
