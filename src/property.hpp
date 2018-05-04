@@ -68,6 +68,7 @@ constexpr const char *P_ENABLE_PORTO = "enable_porto";
 constexpr const char *P_RESOLV_CONF = "resolv_conf";
 constexpr const char *P_WEAK = "weak";
 constexpr const char *P_MEM_TOTAL_GUARANTEE = "memory_guarantee_total";
+constexpr const char *P_OOM_IS_FATAL = "oom_is_fatal";
 
 constexpr int VIRT_MODE_APP = 0;
 constexpr int VIRT_MODE_OS = 1;

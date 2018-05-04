@@ -938,6 +938,18 @@ public:
     }
 };
 
+class TOomIsFatalProperty : public TBoolValue, public TContainerValue {
+public:
+    TOomIsFatalProperty() :
+        TBoolValue(PERSISTENT_VALUE | DYNAMIC_VALUE),
+        TContainerValue(P_OOM_IS_FATAL,
+                        "Kill all affected containers on OOM (dynamic)") {}
+
+    bool GetDefault() const override {
+        return true;
+    }
+};
+
 class TRawIdProperty : public TIntValue, public TContainerValue {
 public:
     TRawIdProperty() :
@@ -1027,6 +1039,7 @@ void RegisterProperties(std::shared_ptr<TRawValueMap> m,
         new TEnablePortoProperty,
         new TResolvConfProperty,
         new TWeakProperty,
+        new TOomIsFatalProperty,
 
         new TRawIdProperty,
         new TRawRootPidProperty,
